@@ -1,0 +1,41 @@
+html, body{
+    height:100%;
+}
+
+header{
+    border: 1px solid black;
+    width: 80%;
+    height: 17%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#topmenu{
+    border: 1px solid black;
+    width: 77.3%;
+    height: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sidemenu{
+    border: 1px solid black;
+    width: 10%;
+    height: 70.1%;
+    margin-left: 9.9%;
+    float:left;
+    word-wrap: break-word;
+}
+
+#formcontainer{
+    border: 1px solid black;
+    width: 66.1%;
+    height: 70%;
+    float:left;
+    margin-left:1%;
+    margin-top:1.2%    
+}
+
+footer{
+    border: 1px solid black;
+}
