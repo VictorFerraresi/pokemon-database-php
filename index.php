@@ -29,7 +29,7 @@
                Aqui você pode escolher seu Pocket Monster favorito e montá-lo com seu <i>set</i> de golpes, 
                habilidade, natureza, itens, e simular o golpe que o tornará efetivo a gosto contra seu adversário.
             </p>
-            <form id="form">
+            <form id="form" method="post " action="index.php">
                 Level do Pokémon atacante:
                 <input type="text" name="lvl" id="input"><br><br>
                 Valor do atributo atk/sp.atk:
@@ -41,7 +41,7 @@
                 Stab:
                 <input type="checkbox" name="stab" value="yes" id="input"><br><br>
                 Modificadores de tipo:
-                <select id="input">
+                <select id="input" name="type">
                     <option value="1">1</option>
                     <option value="0.25">0.25</option>
                     <option value="0.5">0.5</option>
@@ -50,10 +50,32 @@
                 </select><br><br>
                 Golpe crítico:
                 <input type="checkbox" name="critico" value="yes" id="input"><br><br>
-                <input type="submit" value="Calcular" id="input">
-                
-                
+                <input type="submit" name="submit" value="Calcular" id="input">                              
             </form>
+            <?php
+            if(isset($_POST['submit']))
+            {
+               calculate();
+            }
+            function calculate(){
+            $atk=$_POST['atk'];
+            $def=$_POST['def'];
+            $lvl=$_POST['lvl'];
+            $dmg=$_POST['dmg'];
+            if ($_POST['stab']==yes){
+                $stab=1.5;
+            }
+            else{$stab=1;}
+            $type=$_POST['type'];
+            if ($_POST['critico']==yes){
+                $critico=1.5;
+            }
+            else{$critico=1;}
+            $rand=rand(0.81,1);
+            $result=(((2*$lvl+10)/250)*($atk/$def)*$dmg+2)*$stab*$type*$critical*$rand;
+            echo '$result';
+            }
+            ?>
         </section>
         
         <!-- <footer>FOOTERFOOTERFOOTERFOOTERFOOTERFOOTER</footer> -->
