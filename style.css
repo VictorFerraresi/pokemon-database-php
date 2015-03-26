@@ -1,12 +1,9 @@
 html, body{
-    height:100%;   
-    background-color: #1E80A7;
-    color: white;
+    height:100%;  
 }
 
 header{
-    border: 3px solid white;
-    border-radius: 25px;
+    border: 3px solid black;
     width: 80%;
     height: 17%;
     margin-left: auto;
@@ -14,8 +11,7 @@ header{
 }
 
 #topmenu{
-    border: 3px solid white;
-    border-radius: 25px;
+    border: 3px solid black;
     width: 77.3%;
     height: 2%;
     margin-left: auto;
@@ -23,18 +19,16 @@ header{
 }
 
 #sidemenu{
-    border: 3px solid white;
-    border-radius: 25px;
+    border: 3px solid black;
     width: 10%;
     height: 70.1%;
     margin-left: 9.9%;
     float:left;
-    word-wrap: break-word;
+    word-wrap: break-word;   
 }
 
 #formcontainer{
-    border: 3px solid white;
-    border-radius: 25px;
+    border: 3px solid black;
     width: 64.4%;
     height: 70%;
     float:left;
@@ -45,6 +39,7 @@ header{
 
 ul{
     list-style-type: none;
+    margin: 0;
 }
 
 li{
