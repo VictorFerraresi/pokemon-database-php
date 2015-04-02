@@ -18,18 +18,42 @@
     
     <body>
         <header>HEADERHEADERHEADERHEADERHEADERHEADER</header>
-        
-        <menu id="topmenu">
-            <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Home3</a></li>
-                <li><a href='#'>Home4</a></li>
-                <li><a href='#'>Home5</a></li>
-            </ul>
-        </menu>
-        
+      
         <menu id="sidemenu">           
         </menu>
+        
+        <div class="container">
+
+      <form class="form-signin" id="form" method="post" action="calcuate.php">
+        <h2 class="form-signin-heading">Insira as informações</h2>
+        <label for="inputlvl" class="sr-only">Level do Pokémon atacante</label>
+        <input type="text" id="inputlvl" class="form-control" name="lvl" placeholder="Level do Pokémon Atacante" required autofocus>
+        <label for="inputatk" class="sr-only">Ataque</label>
+        <input type="text" id="inputatk" class="form-control" name="atk" placeholder="Valor do atributo atk/sp.atk" required>
+        <label for="inputdef" class="sr-only">Defesa</label>
+        <input type="text" id="inputdef" class="form-control" name="def" placeholder="Valor do atributo def/sp.def" required>
+        <label for="inputdmg" class="sr-only">Dano Base</label>
+        <input type="text" id="inputdmg" class="form-control" name="dmg" placeholder="Dano base do golpe" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name = "stab" id ="inputstab" value="yes"> Stab
+          </label>
+          <label>
+            <input type="checkbox" name = "critico" id ="inputcrit" value="yes"> Golpe Crítico
+          </label>
+          <select id="input" name="type">
+                    <option value="1">1</option>
+                    <option value="0.25">0.25</option>
+                    <option value="0.5">0.5</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+           </select>
+            
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Calcular!</button>
+      </form>
+
+    </div> <!-- /container -->
         
         <section id="formcontainer">
             <p>
@@ -37,30 +61,7 @@
                da franquia de Pokémon que se dispõe a dedicar seu tempo ao ambiente competitivo. 
                Aqui você pode escolher seu Pocket Monster favorito e montá-lo com seu <i>set</i> de golpes, 
                habilidade, natureza, itens, e simular o golpe que o tornará efetivo a gosto contra seu adversário.
-            </p>
-            <form id="form" method="post" action="calculate.php">
-                Level do Pokémon atacante:
-                <input type="text" name="lvl" id="input"><br><br>
-                Valor do atributo atk/sp.atk:
-                <input type="text" name="atk" id="input"><br><br>
-                Valor do atributo def/sp.def:
-                <input type="text" name="def" id="input"><br><br>
-                Dano base do golpe:
-                <input type="text" name="dmg" id="input"><br><br>
-                Stab:
-                <input type="checkbox" name="stab" value="yes" id="input"><br><br>
-                Modificadores de tipo:
-                <select id="input" name="type">
-                    <option value="1">1</option>
-                    <option value="0.25">0.25</option>
-                    <option value="0.5">0.5</option>
-                    <option value="2">2</option>
-                    <option value="4">4</option>
-                </select><br><br>
-                Golpe crítico:
-                <input type="checkbox" name="critico" value="yes" id="input"><br><br>
-                <input type="submit" name="submit" value="Calcular" id="input">                              
-            </form>   
+            </p> 
             <?php
                 session_start();
                 if(isset($_SESSION['showresult'])){				
