@@ -18,8 +18,9 @@ function calculate(){
         $critico=1.5;
     }
     else{$critico=1;}
-    $rand=rand(0.81,1);
+    $rand=rand(85,100)/100;
     $result=(((2*$lvl+10)/250)*($atk/$def)*$dmg+2)*$stab*$type*$critico*$rand;
+    //echo "atk $atk , def $def, lvl $lvl, dmg $dmg, stab $stab, cri $critico, type $type, rand $rand, res $result";
     $_SESSION['showresult'] = $result;
     header("location:index.php");
     }

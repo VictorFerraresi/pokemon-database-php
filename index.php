@@ -93,12 +93,10 @@
                  </select>
                  <?php                    
                     if(isset($_SESSION['showresult'])){				
-                        if($_SESSION['showresult'] != 0){
-                            echo '<div class="alert alert-info" role="alert">
-                                <strong>Resultado do Dano: </strong>' .$_SESSION['showresult'].'
-                                </div>';
-                            unset($_SESSION['showresult']);
-                        } 
+                        echo '<div class="alert alert-info" role="alert">
+                            <strong>Resultado do Dano: </strong>' .$_SESSION['showresult'].'
+                            </div>';
+                        unset($_SESSION['showresult']);
                     }
                 ?>
 
