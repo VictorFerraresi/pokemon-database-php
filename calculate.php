@@ -4,11 +4,15 @@ session_start();
 if(isset($_POST['submit'])){
    calculate();
 }
+else {
+    header("location:index.php");
+}
 function calculate(){
     $atk=$_POST['atk'];
     $def=$_POST['def'];
     $lvl=$_POST['lvl'];
-    $dmg=$_POST['dmg'];
+    $dmg=$_POST['dmg'];        
+    
     if(isset($_POST['stab'])){
         $stab=1.5;
     }

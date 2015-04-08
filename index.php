@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    require 'mysqlcon.php';
 ?>
 <html lang="pt-br">
     
@@ -34,13 +35,13 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tipos de Calculadora <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Simples</a></li>
+                            <li><a href="#">Counter</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
