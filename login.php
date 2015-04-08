@@ -19,6 +19,8 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    
     <link href="css/signin.css" rel="stylesheet">
 
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -95,6 +97,12 @@
     ?>
 
     </div> 
+      
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+      </footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
