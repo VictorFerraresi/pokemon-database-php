@@ -57,9 +57,9 @@
                     </li>
                     <?php
                         if($_SESSION['admin'] > 0){
-                            echo  '<li><a href="acp.php">Painel do Administrador</a></li>';
+                            echo '<li><a href="acp.php">Painel do Administrador</a></li>';
                         }
-                    ?>
+                   ?>
                 </ul>
             </div>
         </div>

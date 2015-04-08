@@ -18,9 +18,9 @@ USE `pokemon`;
 -- Copiando estrutura para tabela pokemon.golpes
 CREATE TABLE IF NOT EXISTS `golpes` (
   `id` int(4) NOT NULL AUTO_INCREMENT COMMENT 'ID único do golpe',
-  `nome` varchar(20) NOT NULL COMMENT 'Nome do golpe',
-  `dano` int(3) NOT NULL COMMENT 'Dano do golpe',
-  `tipo` int(2) NOT NULL COMMENT 'Tipo do golpe',
+  `name` varchar(20) NOT NULL COMMENT 'Nome do golpe',
+  `damage` int(3) NOT NULL COMMENT 'Dano do golpe',
+  `type` int(2) NOT NULL COMMENT 'Tipo do golpe',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
