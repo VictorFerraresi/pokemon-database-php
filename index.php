@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    require 'mysqlcon.php';
+    require 'mysqlcon.php';    
 ?>
 <html lang="pt-br">
     

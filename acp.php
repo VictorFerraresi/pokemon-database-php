@@ -5,6 +5,7 @@
         header('location:./');
     }
     require 'mysqlcon.php';    
+    include 'functions.php'
 ?>
 <html lang="pt-br">
     
@@ -189,7 +190,7 @@
                             <td>".$row['id']."</td>
                             <td>".$row['name']."</td> 
                             <td>".$row['damage']."</td>
-                            <td>".$row['type']."</td>
+                            <td>".typeEnumerator($row['type'])."</td>
                           </tr>";
                 }
                 echo '</table>';
