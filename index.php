@@ -30,12 +30,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Pokémon Damage Calculator</a>
+                    <a class="navbar-brand" href="./">Pokémon Damage Calculator</a>
                 </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li class="active"><a href="./">Home</a></li>
+                    <?php
+                        if(!isset($_SESSION['user'])){
+                            echo "<li><a href='login.php'>Login</a></li>";
+                        } else {
+                            echo "<li><a href='logout.php'>Logout</a></li>";
+                        }
+                    ?>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tipos de Calculadora <span class="caret"></span></a>
@@ -49,6 +55,11 @@
                             <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
+                    <?php
+                        if($_SESSION['admin'] > 0){
+                            echo  '<li><a href="acp.php">Painel do Administrador</a></li>';
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -57,7 +68,7 @@
         <div class="jumbotron">
             <h1>Pokémon Damage Calculator</h1>
             <p>Este <i>site</i> foi criado com o propósito de auxiliar jogadores dos jogos 
-           da franquia de Pokémon que se dispõe a dedicar seu tempo ao ambiente competitivo. 
+           da franquia de Pokémon que se dispõem a dedicar seu tempo ao ambiente competitivo. 
            Aqui você pode escolher seu Pocket Monster favorito e montá-lo com seu <i>set</i> de golpes, 
            habilidade, natureza, itens, e simular o golpe que o tornará efetivo a gosto contra seu adversário.</p>
         </div> 

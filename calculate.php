@@ -26,6 +26,6 @@ function calculate(){
     $result=(((2*$lvl+10)/250)*($atk/$def)*$dmg+2)*$stab*$type*$critico*$rand;
     //echo "atk $atk , def $def, lvl $lvl, dmg $dmg, stab $stab, cri $critico, type $type, rand $rand, res $result";
     $_SESSION['showresult'] = $result;
-    header("location:index.php");
+    header("location:./");
     }
 ?>

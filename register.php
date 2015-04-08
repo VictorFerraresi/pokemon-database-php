@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Pokémon Damage Calculator &bull; Login</title>
+    <title>Pokémon Damage Calculator &bull; Registro</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,33 +63,30 @@
 
     <div class="container">
 
-      <form class="form-signin" method="post" action="validateLogin.php">
-        <h2 class="form-signin-heading">Faça Login</h2>
+      <form class="form-signin" method="post" action="validateRegister.php">
+        <h2 class="form-signin-heading">Crie sua Conta</h2>
         <input type="text" id="inputUser" name="user" class="form-control" placeholder="Nome de Usuário"required autofocus>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha" required>        
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Mantenha-me conectado
-          </label>
-        </div>
-        <a href="register.php">Não possuo uma conta</a>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
+        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Endereço de Email"required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha" required>                
+        <input type="password" id="inputRepeatPassword" name="repeatpassword" class="form-control" placeholder="Repita a Senha" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Registrar</button>
       </form>
       <?php                    
-        if(isset($_SESSION['error'])){		
+        if(isset($_SESSION['error'])){	
             if($_SESSION['error'] == 1){
                 echo '<div class="alert alert-danger" role="alert">
-                    <strong>Usuário ou senha incorretos!</strong>
+                    <strong>As senhas são diferentes!</strong>
                     </div>';
-            } else if($_SESSION['error'] == 2){     
-                echo '<div class="alert alert-success" role="alert">
-                    <strong>Você registrou sua conta com sucesso!</strong>
+            } else if($_SESSION['error'] == 2){
+                echo '<div class="alert alert-danger" role="alert">
+                    <strong>Este nome de usuário já está em uso!</strong>
                     </div>';
-            } else if($_SESSION['error'] == 3){     
-                echo '<div class="alert alert-success" role="alert">
-                    <strong>Você realizou logout de sua conta! <a href="./">Voltar para Home</a></strong>
+            } else if($_SESSION['error'] == 3){
+                echo '<div class="alert alert-danger" role="alert">
+                    <strong>Este e-mail já está em uso!</strong>
                     </div>';
-            }       
+            }
             unset($_SESSION['error']);
         }
     ?>
