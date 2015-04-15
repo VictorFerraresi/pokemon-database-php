@@ -10,8 +10,10 @@ if(isset($_POST['submit'])){
 else {
     header("location:./");
 }
-function tryLogin($user, $pass){    
-    $result = mysql_query("SELECT * FROM `pokemon`.`usuarios` WHERE user = '$user' AND password = '$pass' LIMIT 1");
+function tryLogin($user, $pass){
+    $euser = mysql_real_escape_string($user);
+    $epass = mysql_real_escape_string($pass);
+    $result = mysql_query("SELECT * FROM `pokemon`.`usuarios` WHERE user = '$euser' AND password = '$epass' LIMIT 1");
     if(mysql_num_rows($result) == 0){
         $_SESSION['error'] = 1;
         header("location:login.php");

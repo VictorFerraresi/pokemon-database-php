@@ -1,7 +1,7 @@
 <?php
-    $host = "localhost";
+    $host = "localhost:3308";
     $user = "root";
-    $pass = "root";
+    $pass = "";
 
     $sql = mysql_connect($host, $user, $pass);
 

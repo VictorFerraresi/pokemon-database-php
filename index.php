@@ -17,6 +17,8 @@
         <link href="css/sticky-footer-navbar.css" rel="stylesheet">
         
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+       
+        
         
         <link rel="icon" 
         type="image/png" 
@@ -59,7 +61,7 @@
                         </ul>
                     </li>
                     <?php
-                        if($_SESSION['admin'] > 0){
+                        if(isset($_SESSION['admin']) && $_SESSION['admin'] > 0){
                             echo '<li><a href="acp.php">Painel do Administrador</a></li>';
                         }
                    ?>
@@ -131,5 +133,5 @@
     <script src="../project/dist/js/bootstrap.min.js"></script>
     <script src="../project/assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../project/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../project/assets/js/ie10-viewport-bug-workaround.js"></script>    
 </html>
