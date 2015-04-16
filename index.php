@@ -17,7 +17,10 @@
         <link href="css/sticky-footer-navbar.css" rel="stylesheet">
         
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-       
+        
+        <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>                      
         
         
         <link rel="icon" 
@@ -53,11 +56,11 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Simples</a></li>
                             <li><a href="#">Counter</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Outro Tipo</a></li>
                             <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li class="dropdown-header">Submenu</li>
+                            <li><a href="#">Link Separado</a></li>
+                            <li><a href="#">Outro Link Separado</a></li>
                         </ul>
                     </li>
                     <?php
@@ -88,8 +91,8 @@
               <input type="text" id="inputatk" class="form-control" name="atk" placeholder="Valor do atributo atk/sp.atk" required>
               <label for="inputdef" class="sr-only">Defesa</label>
               <input type="text" id="inputdef" class="form-control" name="def" placeholder="Valor do atributo def/sp.def" required>
-              <label for="inputdmg" class="sr-only">Dano Base</label>
-              <input type="text" id="inputdmg" class="form-control" name="dmg" placeholder="Dano base do golpe" required>
+              <label for="autocomplete" class="sr-only">Dano Base</label>
+              <input type="text" id="autocomplete" class="form-control" name="search" placeholder="Dano base do golpe" required>
               <div class="checkbox">
                 <label>
                     <input type="checkbox" name = "stab" id ="inputstab" value="yes"> Stab
@@ -133,5 +136,42 @@
     <script src="../project/dist/js/bootstrap.min.js"></script>
     <script src="../project/assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../project/assets/js/ie10-viewport-bug-workaround.js"></script>    
+    <script src="../project/assets/js/ie10-viewport-bug-workaround.js"></script> 
+    
+    <script>
+		/*
+		 * jQuery UI Autocomplete: Load Data via AJAX
+		 * http://salman-w.blogspot.com/2013/12/jquery-ui-autocomplete-examples.html
+		 */
+		$(function() {
+			$("#autocomplete").autocomplete({
+				delay: 500,
+				minLength: 3,                               
+				source: function(request, response) {
+					$.getJSON("golpes.php?",{
+                                        golpe: request.term},
+					function(data) {
+						var array = data.map( function(m) {
+							return {
+								label: m.name,
+								url: m.name
+							};
+						});
+						response(array);
+					});
+				},
+				focus: function(event, ui) {
+					// prevent autocomplete from updating the textbox
+					event.preventDefault();
+				},
+				select: function(event, ui) {
+					// prevent autocomplete from updating the textbox
+					event.preventDefault();
+					// navigate to the selected item's url
+				//	window.open(ui.item.url);
+                                        $("#autocomplete").val(ui.item.url);       
+				}
+			});
+		});
+	</script>
 </html>

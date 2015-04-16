@@ -7,7 +7,7 @@
             case 3: return 'Water';     
             case 4: return 'Flying';
             case 5: return 'Grass';
-            case 6: return 'Poision';
+            case 6: return 'Poison';
             case 7: return 'Eletric';
             case 8: return 'Ground';    
             case 9: return 'Psychic';
