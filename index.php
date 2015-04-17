@@ -132,7 +132,6 @@
             </div>
         </footer>
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="../project/dist/js/bootstrap.min.js"></script>
     <script src="../project/assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
