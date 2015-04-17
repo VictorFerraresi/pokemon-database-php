@@ -178,28 +178,30 @@
                     unset($_SESSION['error2']);
                 }
             ?><br>             
-            <hr>
-            <?php
-                $result = mysql_query("SELECT * FROM `pokemon`.`golpes`");
-                echo '<table class="table table-striped table-bordered">';
-                echo '<tr>
-                        <th>Database ID</th>
-                        <th>Nome do Golpe</th> 
-                        <th>Dano</th>
-                        <th>Tipo</th>
-                      </tr>';
-                while ($row = mysql_fetch_assoc($result)){
-                    echo "<tr>
-                            <td>".$row['id']."</td>
-                            <td>".$row['name']."</td> 
-                            <td>".$row['damage']."</td>
-                            <td>".typeEnumerator($row['type'])."</td>
-                          </tr>";
-                }
-                echo '</table>';
-            ?>
-
+            <hr>  
+                <div class="strikes">
+                <?php
+                    $result = mysql_query("SELECT * FROM `pokemon`.`golpes`");
+                    echo '<table class="table table-striped table-bordered">';
+                    echo '<tr>
+                            <th>Database ID</th>
+                            <th>Nome do Golpe</th> 
+                            <th>Dano</th>
+                            <th>Tipo</th>
+                          </tr>';
+                    while ($row = mysql_fetch_assoc($result)){
+                        echo "<tr>
+                                <td>".$row['id']."</td>
+                                <td>".$row['name']."</td> 
+                                <td>".$row['damage']."</td>
+                                <td>".typeEnumerator($row['type'])."</td>
+                              </tr>";
+                    }
+                    echo '</table>';
+                ?>
+            </div>            
         </div> <!-- /container -->
+                
 
         <footer class="footer">
             <div class="container">

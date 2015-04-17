@@ -5628,3 +5628,8 @@ button.close {
 		display: none!important
 	}
 }
+
+.strikes{
+    height: 30em;
+    overflow:auto;
+}
