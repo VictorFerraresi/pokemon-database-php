@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'mysqlcon.php';
 
 if(isset($_POST['submit'])){
    calculate();
@@ -11,7 +12,19 @@ function calculate(){
     $atk=$_POST['atk'];
     $def=$_POST['def'];
     $lvl=$_POST['lvl'];
-    $dmg=$_POST['dmg'];        
+    $name=$_POST['golpe'];
+    
+    $result = mysql_query("SELECT * FROM `pokemon`.`golpes` WHERE name = '$name' LIMIT 1");    
+
+    if(mysql_num_rows($result) == 0) {
+        $_SESSION['error'] = 1;
+        header("location:index.php");
+        return 1;
+    }
+    
+    $row = mysql_fetch_assoc($result);
+    
+    $dmg = $row["damage"];
     
     if(isset($_POST['stab'])){
         $stab=1.5;

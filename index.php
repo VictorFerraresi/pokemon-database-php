@@ -18,7 +18,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
         
-        <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet">
+        <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>                      
         
@@ -92,7 +92,7 @@
               <label for="inputdef" class="sr-only">Defesa</label>
               <input type="text" id="inputdef" class="form-control" name="def" placeholder="Valor do atributo def/sp.def" required>
               <label for="autocomplete" class="sr-only">Dano Base</label>
-              <input type="text" id="autocomplete" class="form-control" name="search" placeholder="Dano base do golpe" required>
+              <input type="text" id="autocomplete" class="form-control" name="golpe" placeholder="Nome do golpe" required>
               <div class="checkbox">
                 <label>
                     <input type="checkbox" name = "stab" id ="inputstab" value="yes"> Stab
@@ -110,13 +110,20 @@
                           <option value="0.5">0.5</option>
                           <option value="2">2</option>
                           <option value="4">4</option>
-                 </select>
-                 <?php                    
+                </select>
+                <?php                    
                     if(isset($_SESSION['showresult'])){				
                         echo '<div class="alert alert-info" role="alert">
                             <strong>Resultado do Dano: </strong>' .$_SESSION['showresult'].'
                             </div>';
                         unset($_SESSION['showresult']);
+                    }
+                    
+                    if(isset($_SESSION['error']) && $_SESSION['error'] == 1){				
+                        echo '<div class="alert alert-danger" role="alert">
+                            <strong>Não existe um golpe com este nome!</strong>
+                            </div>';
+                        unset($_SESSION['error']);
                     }
                 ?>
 
@@ -132,45 +139,39 @@
             </div>
         </footer>
     </body>
+    
     <script src="../project/dist/js/bootstrap.min.js"></script>
     <script src="../project/assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../project/assets/js/ie10-viewport-bug-workaround.js"></script> 
     
     <script>
-		/*
-		 * jQuery UI Autocomplete: Load Data via AJAX
-		 * http://salman-w.blogspot.com/2013/12/jquery-ui-autocomplete-examples.html
-		 */
-		$(function() {
-			$("#autocomplete").autocomplete({
-				delay: 500,
-				minLength: 3,                               
-				source: function(request, response) {
-					$.getJSON("golpes.php?",{
-                                        golpe: request.term},
-					function(data) {
-						var array = data.map( function(m) {
-							return {
-								label: m.name,
-								url: m.name
-							};
-						});
-						response(array);
-					});
-				},
-				focus: function(event, ui) {
-					// prevent autocomplete from updating the textbox
-					event.preventDefault();
-				},
-				select: function(event, ui) {
-					// prevent autocomplete from updating the textbox
-					event.preventDefault();
-					// navigate to the selected item's url
-				//	window.open(ui.item.url);
-                                        $("#autocomplete").val(ui.item.url);       
-				}
+        $(function() {
+            $("#autocomplete").autocomplete({
+		delay: 300,
+		minLength: 3,       
+		source: function(request, response) {
+                    $.getJSON("golpes.php?",{
+                        golpe: request.term
+                    },
+                    function(data) {
+                        var array = data.map( function(m) {
+                            return {
+                                label: m.name,
+                                url: m.name
+                            };
 			});
-		});
-	</script>
+			response(array);
+                    });
+                },
+		focus: function(event, ui) {
+                    event.preventDefault();
+		},
+		select: function(event, ui) {
+                    event.preventDefault();
+                    $("#autocomplete").val(ui.item.url);       
+                }
+            });
+	});
+    </script>
 </html>
