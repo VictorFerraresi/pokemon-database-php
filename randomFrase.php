@@ -4,6 +4,9 @@
                     <?php
                     $x=rand(1, 20);
                     
+                    teamRocket($teamR);
+                    chocolapis($choco);
+                    
                     switch ($x) {
                         case 1:
                             echo 'Hit me with your best shot!';
@@ -28,20 +31,43 @@
                             break;
                         case 8:
                             echo 'Prepare for trouble!';
+                            $teamR=1;
                             break;
                         case 9:
-                            echo 'And make it double!';
+                            echo 'Are you emotionally okay?';
                             break;
                         case 10:
-                            echo 'Meow, that is right!';
+                            echo 'All I wanna do is see you turn in to a Giant Woman';
                             break;
                         case 11:
                             echo 'I was destined to meet you.';
                             break;
+                        case 12:
+                            echo 'Chocolapis is the worst food in the whole universe. Only peolple with no self love would eai it.';
+                            $choco=1;
+                            break;
 
                         default:
                             echo 'Now is not the time to use that!';
-                            break;
+                            break;    
+                    }
+                    
+                    function teamRocket ($teamR){
+                        if ($teamR==1){
+                            echo 'And make it double!';
+                            return $teamR=2;
+                        }
+                        if ($teamR==2){
+                            echo 'Meow, that is right!';
+                            return $teamR=0;
+                        }
+                    }
+                    
+                    function chocolapis ($choco){
+                        if ($choco==1){
+                            echo 'That was a lie.';
+                            return $choco=0;
+                        }
                     }
                     ?>
                 </p>
