@@ -133,11 +133,9 @@
 
         </div> <!-- /container -->
 
-        <footer class="footer">
-            <div class="container">
-              <p class="text-muted">Place sticky footer content here.</p>
-            </div>
-        </footer>
+        <?php
+        include 'randomFrase.php';
+        ?>
     </body>
     
     <script src="../project/dist/js/bootstrap.min.js"></script>

@@ -9,22 +9,34 @@
                             echo 'Hit me with your best shot!';
                             break;
                         case 2:
-                            echo 'Hit me with your best shot!';
+                            echo 'Love takes time. Love takes work.';
                             break;
                         case 3:
-                            echo 'Hit me with your best shot!';
+                            echo 'This is merely a race to the grave.';
                             break;
                         case 4:
-                            echo 'Hit me with your best shot!';
+                            echo 'Prepare to fight my six Magikarps!';
                             break;
                         case 5:
-                            echo 'Hit me with your best shot!';
+                            echo 'Will one of you pokemon keep me company?';
                             break;
                         case 6:
-                            echo 'Hit me with your best shot!';
+                            echo 'Press B to run!';
                             break;
                         case 7:
-                            echo 'Hit me with your best shot!';
+                            echo 'It is dangerous to go alone! Take this!';
+                            break;
+                        case 8:
+                            echo 'Prepare for trouble!';
+                            break;
+                        case 9:
+                            echo 'And make it double!';
+                            break;
+                        case 10:
+                            echo 'Meow, that is right!';
+                            break;
+                        case 11:
+                            echo 'I was destined to meet you.';
                             break;
 
                         default:
