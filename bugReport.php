@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<?php
-    session_start();
-    require 'mysqlcon.php';    
-?>
+
 <html lang="pt-br">
     
     <head>
@@ -51,6 +48,7 @@
                         }
                     ?>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="bugReport.php">Reportar bugs</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tipos de Calculadora <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -82,9 +80,10 @@
         
         <div class="container">
             
-            <form>
+            <form method="post" action="verificarForm.php">
                 <h2>Selecione o problema percebido:</h2>
-                <select>
+                <select name="slct">
+                    <option value="selecione" name="selecione">Selecione uma opção</option>
                     <option value="errosnacalculadora">Erros na calculadora</option>
                     <option value="errosdeortografia">Erros de ortografia</option>
                     <option value="errosnogolpe">Erro no valor dos golpes</option>
@@ -92,14 +91,18 @@
                     <option value="errosnolink">Links quebrados</option>
                     <option value="errosoutros">Outros</option>
                 </select>
+                
+                <h2>Insira a descrição do ocorrido:</h2>
+                <textarea placeholder="Só chora..." nome="chora" value="chora" rows="7" cols="60" maxlenght="256"></textarea>   
+                <input type="submit" value="Pokébola, vai!!" name="enviar"></input>    
             </form>
-            
+   
         </div>
+        <br>
         
-        <footer class="footer">
-            <div class="container">
-              <p class="text-muted">Place sticky footer content here.</p>
-            </div>
-        </footer>
+        <?php
+        include 'randomFrase.php';
+        ?>
+        
     </body>
 </html>
