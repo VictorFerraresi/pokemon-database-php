@@ -51,6 +51,7 @@
                         }
                     ?>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="bugReport.php">Reportar bugs</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tipos de Calculadora <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -132,7 +133,7 @@
             </form>
 
         </div> <!-- /container -->
-
+        <br>
         <?php
         include 'randomFrase.php';
         ?>
