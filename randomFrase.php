@@ -6,9 +6,21 @@ session_start();
             <div class="container">
                 <p class="text-muted">
                     <?php
+                    
+                    require 'mysqlcon.php';
+                    
                     error_reporting(0);
-                    $x=rand(1, 30);
-                    if ($_SESSION["teamR"]!=0 || $_SESSION["choco"]!=0){
+                    $x=rand(1,2);
+                    
+                    $result = mysql_query("SELECT frase FROM frases WHERE id='$x'");
+
+                    if ($result) {
+                      $row = mysql_fetch_assoc($result);
+                      echo $row['frase'];
+                    }
+                    else echo "An error occurred: " . mysql_error();
+                    
+                    /*if ($_SESSION["teamR"]!=0 || $_SESSION["choco"]!=0){
                         teamRocket($_SESSION["teamR"]);
                         chocolapis($_SESSION["choco"]);
                     }
@@ -127,7 +139,7 @@ session_start();
                             echo 'That was a lie.';
                             return $_SESSION["choco"]=0;
                         }
-                    }
+                    }*/
                     ?>
                 </p>
             </div>
