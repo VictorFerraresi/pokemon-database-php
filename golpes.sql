@@ -44,14 +44,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 CREATE TABLE IF NOT EXISTS `frases` 
 (
-  `id` int(2) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID único da frase',
+  `id` int(2) NOT NULL AUTO_INCREMENT COMMENT 'ID único da frase',
   `frase` varchar(100) NOT NULL DEFAULT '0' COMMENT 'Frase',
-);
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `frases` (`id`, `frase`) VALUES
 	(1, 'Hit me with your best shot!');
 INSERT INTO `frases` (`id`, `frase`) VALUES
 	(2, 'Press B to run!');
+
+CREATE TABLE IF NOT EXISTS `bugs`
+(
+  `id` int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'ID �nico do report',
+  `report` varchar(500) NOT NULL DEFAULT '0' COMMENT 'Report', 
+);
 
 INSERT INTO `usuarios` (`id`, `user`, `email`, `password`, `admin`) VALUES
 	(1, 'victor', 'victor_ferraresi@hotmail.com', '344907e89b981caf221d05f597eb57a6af408f15f4dd7895bbd1b96a2938ec24a7dcf23acb94ece0b6d7b0640358bc56bdb448194b9305311aff038a834a079f', 1);
