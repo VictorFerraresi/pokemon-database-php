@@ -10,9 +10,9 @@ session_start();
                     require 'mysqlcon.php';
                     
                     error_reporting(0);
-                    $x=rand(1,2);
+                    $x=rand(1,4);
                     
-                    $result = mysql_query("SELECT frase FROM frases WHERE id='$x'");
+                    $result = mysql_query("SELECT frase FROM `pokemon`.`frases` WHERE id='$x'");
 
                     if ($result) {
                       $row = mysql_fetch_assoc($result);

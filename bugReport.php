@@ -93,7 +93,7 @@
                 </select>
                 
                 <h2>Insira a descrição do ocorrido:</h2>
-                <textarea placeholder="Só chora..." nome="chora" value="chora" rows="7" cols="60" maxlenght="256"></textarea>   
+                <textarea placeholder="Só chora..." required name="chora"value="chora" rows="7" cols="60" maxlenght="256"></textarea>   
                 <input type="submit" value="Pokébola, vai!!" name="enviar"></input>    
             </form>
    
